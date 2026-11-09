@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Produksi Media Promosi Kesehatan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#eef4f6;--card:#fff;--tx:#0c2331;--mu:#53707d;--ac:#0a8f84;--ac2:#ff5a36;--bd:#d3e1e6;--hero:#08303b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0a171c;--card:#122229;--tx:#e7f2f5;--mu:#9bb6c0;--ac:#2dd4bf;--ac2:#ff8a6b;--bd:#244049;--hero:#06232c}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0a171c;--card:#122229;--tx:#e7f2f5;--mu:#9bb6c0;--ac:#2dd4bf;--ac2:#ff8a6b;--bd:#244049;--hero:#06232c}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-bottom:84px}
+:focus-visible{outline:3px solid var(--ac2);outline-offset:2px}
+header.top{padding:10px 16px;display:flex;justify-content:space-between;gap:8px;font-size:12px;color:#b9d6dd;background:var(--hero)}
+.heroband{background:var(--hero);color:#fff;padding:8px 0 26px;position:relative;overflow:hidden}
+.hero{padding:18px 16px 0;max-width:900px;margin:auto;position:relative}
+.hero h1{margin:0 0 8px;font-size:clamp(26px,6vw,42px);line-height:1.15;letter-spacing:-.02em}
+.hero p{margin:0 0 12px;color:#c6e0e6;max-width:60ch}
+.ecg{width:100%;height:46px;display:block;margin:0 0 8px}
+.ecg polyline{fill:none;stroke:var(--ac2);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:dr 2.4s ease-out forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.ecg polyline{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chips span{background:#ffffff1c;border-radius:999px;padding:3px 12px;font-size:13px}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--bd);z-index:20;display:flex;gap:6px;overflow-x:auto;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px))}
+@media(min-width:720px){body{padding-bottom:0}nav{position:sticky;top:0;bottom:auto;border:0;border-bottom:1px solid var(--bd);background:var(--bg);max-width:none;justify-content:center;padding:10px 16px}}
+nav button,.btn{border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:9px 15px;border-radius:12px;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap;min-height:42px}
+nav button.on,.btn.p{background:var(--ac);color:#06201d;border-color:var(--ac);font-weight:700}
+.btn.sm{min-height:34px;padding:4px 10px;background:#ffffff1c;color:#fff;border-color:#ffffff40}
+main{max-width:900px;margin:auto;padding:14px 16px 48px}
+section{display:none}section.on{display:block}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px;margin:14px 0}
+.card.hl{border-left:6px solid var(--ac2)}
+h2{margin:8px 0}h3{margin:0 0 8px;font-size:19px;letter-spacing:-.01em}
+.tag{display:inline-block;background:var(--ac);color:#06201d;border-radius:8px;padding:1px 10px;font-size:12px;font-weight:700;margin-bottom:6px}
+details{border-top:1px solid var(--bd);padding:6px 0}details summary{cursor:pointer;font-weight:600;padding:6px 0}
+ul{padding-left:20px;margin:6px 0}li{margin:3px 0}
+label{display:block;font-size:13px;color:var(--mu);margin:10px 0 3px}
+input,select,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+input[type=color]{padding:2px;height:42px}input[type=range]{padding:0}
+.lab{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:760px){.lab{grid-template-columns:280px 1fr}}
+.cv{max-width:100%;border:1px solid var(--bd);border-radius:12px;background:#fff;display:block;margin:auto}
+.chk li{list-style:none}.chk{padding:0}
+.ok{color:#16a34a}.no{color:#dc2626}
+.opt{display:block;width:100%;text-align:left;margin:7px 0;white-space:normal}
+.opt.right{border-color:#16a34a;background:#16a34a22}.opt.wrong{border-color:#dc2626;background:#dc262622}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.score{font-size:30px;font-weight:800;color:var(--ac)}
+.dsn{display:grid;gap:16px;grid-template-columns:1fr}@media(min-width:760px){.dsn{grid-template-columns:1fr 1fr}}
+.avt{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2));display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:700;color:#fff}
+.qt{border-left:4px solid var(--ac);padding:8px 14px;background:var(--bg);border-radius:10px;color:var(--mu);font-style:italic;margin:12px 0}
+.ct{display:block;border:1px solid var(--bd);border-radius:12px;padding:8px 12px;margin:8px 0;color:var(--tx);text-decoration:none}.ct small{display:block;color:var(--mu);font-size:12px}
+.tl{border-left:3px solid var(--ac);padding:2px 0 2px 12px;margin:12px 0}.tl small{display:block;color:var(--mu)}
+.pr{background:var(--bg);border:1px dashed var(--ac);border-radius:12px;padding:10px 12px;font:13px/1.55 ui-monospace,Menlo,monospace;white-space:pre-wrap;margin:6px 0}
+.bad{border-color:#dc2626}.good{border-color:#16a34a}
+ol.st{padding-left:20px}ol.st li{margin:6px 0}
+.fb{margin:6px 0 14px;padding:10px 12px;border-radius:12px;background:var(--bg);border-left:4px solid var(--ac);font-size:14px}
+.prog{position:sticky;top:0;background:var(--card);padding:8px 12px;border-radius:0 0 12px 12px;font-size:13px;color:var(--mu);z-index:4}
+@media(min-width:720px){.prog{top:60px}}
+.tbl{overflow-x:auto}.tbl table{border-collapse:collapse;min-width:560px;width:100%;font-size:14px}.tbl th,.tbl td{border-bottom:1px solid var(--bd);padding:8px;text-align:left;vertical-align:top}
+.note{background:var(--bg);border-radius:12px;padding:10px 12px;font-size:14px;color:var(--mu);margin:8px 0}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:10px 0}.stat div{background:var(--bg);border-radius:12px;padding:8px 10px;font-size:13px;color:var(--mu)}.stat b{display:block;font-size:22px;color:var(--tx)}
+</style>
+</head>
+<body>
+<header class="top"><span>Prodi Promosi Kesehatan · Poltekkes Kemenkes Jambi</span><span>Lazuardi Yudha Pradana, S.Kom., M.Kom.</span></header>
+<div class="heroband"><div class="hero"><svg class="ecg" viewBox="0 0 600 46" preserveAspectRatio="none" aria-hidden="true"><polyline pathLength="1" points="0,26 150,26 175,26 190,8 205,42 220,20 235,26 380,26 400,26 415,4 432,44 448,18 462,26 600,26"/></svg>
+<h1>Produksi Media Promosi Kesehatan</h1><p>Dari masalah nyata di posyandu dan puskesmas sampai media jadi: standing banner, radio spot, dan video ILM. Pelajari, simulasikan, lalu uji seperti di lapangan.</p>
+<div class="chips"><span>3 jenis media</span><span>6 praktikum canvas</span><span>20 soal kuis</span><button class="btn sm" id="thm" aria-label="Ganti tema terang atau gelap">🌓 Tema</button></div></div></div>
+<nav id="nav"></nav>
+<main>
+
+<section id="materi">
+<div class="card"><h3>Peta Materi</h3><p>Media promosi kesehatan menyampaikan pesan agar sasaran <b>tahu, mau, dan mampu</b> berperilaku sehat. Pilih media sesuai sasaran, waktu, dan anggaran. Buka tiap kartu di bawah.</p></div>
+
+<div class="card"><span class="tag">Media Cetak</span><h3>Standing Banner</h3>
+<details open><summary>Konsep &amp; ciri</summary><ul><li>Dibaca sambil lewat: 3–5 detik. Satu banner, satu pesan utama.</li><li>Ukuran umum 60×160 cm, tegak, diletakkan di loket, lobi, atau pintu posyandu.</li><li>Elemen: judul (≤6 kata), visual/ikon, isi singkat (≤25 kata), ajakan bertindak, kontak, logo.</li></ul></details>
+<details><summary>Tahap produksi</summary><ul><li>1. Analisis sasaran &amp; tujuan perilaku</li><li>2. Rumuskan satu pesan kunci</li><li>3. Sketsa tata letak (hierarki: judul → visual → isi → CTA)</li><li>4. Desain dengan kontras tinggi, font besar</li><li>5. Uji coba ke 5 orang sasaran, revisi, cetak</li></ul></details>
+<details><summary>Kesalahan umum</summary><ul><li>Teks terlalu banyak, font kecil</li><li>Warna teks dan latar mirip (kontras rendah)</li><li>Tidak ada ajakan atau kontak</li></ul></details></div>
+
+<div class="card"><span class="tag">Audio</span><h3>Naskah Radio Spot</h3>
+<details open><summary>Konsep &amp; ciri</summary><ul><li>Hanya suara: pendengar membayangkan sendiri. Gunakan kalimat pendek, akrab, satu ide per kalimat.</li><li>Durasi umum 30 atau 60 detik. Kecepatan baca sekitar 150 kata/menit (±2,5 kata/detik).</li><li>Format naskah: kolom suara (narator/pemeran), efek suara (SFX), musik/jingle, dan teks.</li></ul></details>
+<details><summary>Struktur 30 detik</summary><ul><li>0–3 dtk: jingle/SFX pemikat perhatian</li><li>3–10 dtk: masalah atau situasi sehari-hari</li><li>10–24 dtk: pesan kunci + solusi, diulang</li><li>24–30 dtk: ajakan bertindak + penutup jingle</li></ul></details>
+<details><summary>Tips</summary><ul><li>Ulangi pesan kunci minimal 2 kali</li><li>Hindari istilah medis rumit</li><li>Baca keras-keras sebelum rekaman</li></ul></details></div>
+
+<div class="card"><span class="tag">Audio Visual</span><h3>TV Spot, Iklan Layanan Masyarakat (ILM), Feature</h3>
+<details open><summary>Perbedaan</summary><ul><li><b>TV spot</b>: 15–60 detik, padat, satu pesan.</li><li><b>ILM</b>: nirlaba, mengajak perubahan sikap/perilaku (misal cuci tangan, stop merokok).</li><li><b>Feature</b>: lebih panjang (2–5 menit), bercerita mendalam tentang tokoh atau kisah nyata.</li></ul></details>
+<details><summary>Tahap produksi</summary><ul><li><b>Pra-produksi</b>: ide, riset, naskah, storyboard, lokasi, jadwal</li><li><b>Produksi</b>: pengambilan gambar &amp; suara</li><li><b>Pasca-produksi</b>: penyuntingan, musik, teks, uji coba</li></ul></details>
+<details><summary>Ukuran shot</summary><ul><li><b>Wide</b>: memperlihatkan situasi/lokasi</li><li><b>Medium</b>: tokoh dan aktivitas</li><li><b>Close-up</b>: emosi atau detail penting (misal tangan dibilas sabun)</li></ul></details></div>
+</section>
+
+<section id="kasus">
+<div class="card"><h3>Contoh Kasus</h3><p>Pilih media yang paling tepat untuk setiap kasus.</p></div>
+<div id="cases"></div>
+</section>
+
+<section id="lab">
+<div class="card"><h3>Praktikum dasar</h3><p style="margin:0">Latihan tiga media inti dengan daftar periksa otomatis. Setelah itu coba tab <b>Simulasi</b> untuk keputusan di tingkat program.</p></div>
+<div class="row"><button class="btn p" data-l="l1">🪧 Lab 1: Standing Banner</button><button class="btn" data-l="l2">🎙️ Lab 2: Radio Spot</button><button class="btn" data-l="l3">🎬 Lab 3: Storyboard TV</button></div>
+
+<div id="l1" class="card lab"><div>
+<h3>Studio Standing Banner</h3>
+<label>Judul</label><input id="b1" value="Cuci Tangan Pakai Sabun">
+<label>Isi pesan</label><textarea id="b2" rows="3">Cuci tangan 20 detik sebelum makan dan setelah dari toilet untuk cegah diare.</textarea>
+<label>Kontak / ajakan</label><input id="b3" value="Tanya kader posyandu terdekat">
+<label>Tema warna</label><select id="b4"><option value="0">Hijau segar</option><option value="1">Biru sehat</option><option value="2">Jingga hangat</option><option value="3">Kuning pucat (kontras rendah)</option></select>
+<label>Ikon</label><select id="b5"><option>🧼</option><option>🍎</option><option>💉</option><option>🚭</option><option>🦟</option></select>
+<label>Ukuran judul: <span id="b6v">34</span></label><input id="b6" type="range" min="20" max="48" value="34">
+<ul class="chk" id="bchk"></ul>
+<div class="row"><button class="btn p" id="bdl">⬇ Unduh PNG</button></div></div>
+<canvas id="cb" class="cv" width="300" height="800" style="height:min(560px,70vh);width:auto"></canvas></div>
+
+<div id="l2" class="card lab" hidden><div>
+<h3>Studio Naskah Radio Spot</h3>
+<label>Durasi target</label><select id="r0"><option value="30">30 detik</option><option value="60">60 detik</option></select>
+<label>Naskah narator</label><textarea id="r1" rows="8">Pagi hari, anak demam dan lemas? Jangan tunggu! Segera bawa ke puskesmas terdekat. Deteksi dini demam berdarah menyelamatkan nyawa. Ingat, segera ke puskesmas. Gerakan 3M Plus, mulai dari rumah kita!</textarea>
+<ul class="chk" id="rchk"></ul>
+<div class="row"><button class="btn p" id="rplay">▶ Putar simulasi</button><button class="btn" id="rstop">■ Berhenti</button></div></div>
+<canvas id="cr" class="cv" width="640" height="320" style="width:100%"></canvas></div>
+
+<div id="l3" class="card lab" hidden><div>
+<h3>Studio Storyboard TV Spot</h3>
+<p style="font-size:13px;color:var(--mu);margin:0">Atur 4 panel. Skenario: ILM ajakan imunisasi balita.</p>
+<div id="sctl"></div>
+<ul class="chk" id="schk"></ul>
+<div class="row"><button class="btn p" id="splay">▶ Putar</button><button class="btn" id="sdl">⬇ Unduh PNG</button></div></div>
+<canvas id="cs" class="cv" width="640" height="440" style="width:100%"></canvas></div>
+</section>
+
+<section id="dosen">
+<div class="card"><small style="color:var(--ac)">Profil Pengajar</small><h2 style="margin:0">Sekilas Mengenai Dosen Pengampu</h2></div>
+<div class="dsn">
+<div class="card"><div class="avt">LY</div><h3 style="margin-top:12px">Lazuardi Yudha Pradana, S.Kom., M.Kom.</h3>
+<div class="qt">“Seorang muslim yang memiliki cita dunia untuk menjadi pengajar ilmu dan pemilik cinta dari keluarga. Tumbuh sejak 1994, pendamping setia sejak 2018, serta dosen &amp; ayah penjaga cinta sejak 2019.”</div>
+<a class="ct" href="https://instagram.com/lazuardiyudha" target="_blank" rel="noopener"><small>📸 Instagram</small><b>Lazuardiyudha</b></a>
+<a class="ct" href="https://wa.me/6281377922669" target="_blank" rel="noopener"><small>💬 WhatsApp</small><b>0813-7792-2669</b></a>
+<div class="ct"><small>🎮 Mobile Legends ID</small><b>899085688 (12552)</b></div></div>
+<div class="card"><h3>🎓 Riwayat Pengajaran</h3>
+<div class="tl"><small>2019 – Sekarang</small><b>Dosen Universitas Dinamika Bangsa</b></div>
+<div class="tl"><small>2020 – Sekarang</small><b>Instruktur Stephen Komputer</b></div>
+<div class="tl"><small>2021 – Sekarang</small><b>Dosen Universitas Adiwangsa Jambi</b></div>
+<div class="tl"><small>2022 – 2025</small><b>Dosen UIN STS &amp; Poltekkes Kemenkes Jambi</b></div></div>
+</div></section>
+
+<section id="ai">
+<div class="card"><h3>🤖 Praktikum Produksi Media dengan AI</h3><p>Alur: <b>naskah → visual → suara/musik → video → uji coba</b>. Tampilan menu tiap aplikasi sering berubah; ikuti nama fitur utamanya. Pilih topik di bawah.</p></div>
+<div class="row" id="aitabs" style="margin:0 0 8px"></div><div id="aibody"></div>
+</section>
+
+<section id="kuis"><div class="card"><h3>✅ Kuis Pemahaman (20 soal)</h3><p style="margin:0;color:var(--mu)">Pilih satu jawaban. Jika salah, jawaban benar dan penjelasannya akan muncul.</p></div><div class="prog" id="qp"></div><div id="qz"></div><div class="card" id="qres" hidden></div></section>
+<section id="lapangan">
+<div class="card hl"><span class="tag">Kebutuhan nyata</span><h3>Media dibuat untuk mengubah perilaku, bukan untuk dipajang</h3><p>Di lapangan, tim promkes jarang punya anggaran besar, waktu longgar, atau sasaran yang seragam. Karena itu setiap keputusan produksi dimulai dari tiga pertanyaan: <b>siapa sasarannya, perilaku apa yang diubah, dan di mana mereka bisa dijangkau.</b></p>
+<div class="stat"><div><b>3–5 dtk</b>waktu orang membaca banner sambil lewat</div><div><b>±2,5 kata/dtk</b>laju baca naskah radio</div><div><b>5 orang</b>minimal untuk uji coba cepat (pretest)</div></div></div>
+<div class="card"><h3>Alur kerja satu siklus di lapangan</h3>
+<details open><summary>1. Kenali masalah dan sasaran</summary><p>Ambil data dari laporan puskesmas (misal cakupan imunisasi atau kasus DBD per desa). Tentukan <b>sasaran primer</b> (yang berperilaku, misal ibu balita) dan <b>sasaran sekunder</b> (yang memengaruhi: suami, nenek, kader, tokoh agama). Observasi 1 hari: kapan dan di mana mereka berkumpul?</p></details>
+<details><summary>2. Rumuskan perilaku dan satu pesan kunci</summary><p>Tulis dengan pola: <i>siapa + melakukan apa + kapan/di mana</i>. Contoh: "Ibu membawa balita ke posyandu tiap tanggal 10." Satu media, satu pesan. Pesan yang dibagi tiga akan diingat nol.</p></details>
+<details><summary>3. Pilih saluran sesuai kebiasaan sasaran</summary><p>Radio cocok untuk petani dan nelayan yang bekerja, grup WhatsApp untuk ibu muda dan remaja, banner untuk orang yang menunggu di loket, kunjungan kader untuk lansia dan yang sulit membaca. Pakai <b>kombinasi 2–3 saluran</b> agar pesan terdengar berulang.</p></details>
+<details><summary>4. Susun anggaran dan jadwal</summary><p>Daftar biaya: cetak, kuota, honor pengisi suara, transport kader, konsumsi uji coba. Sisihkan sekitar 10% untuk revisi setelah uji coba. Pasang tenggat mundur dari tanggal kegiatan (misal bulan imunisasi).</p></details>
+<details><summary>5. Produksi dan uji coba (pretest)</summary><p>Tunjukkan draf ke 5 orang sasaran. Tanyakan: "Pesannya apa? Kamu diajak apa? Ada yang membingungkan atau menyinggung?" Catat dan revisi. Cek fakta ke sumber resmi (Kemenkes, WHO) dan minta paraf tenaga kesehatan penanggung jawab program.</p></details>
+<details><summary>6. Distribusi</summary><p>Banner di titik ramai setinggi mata, bukan di sudut. Radio: minta jadwal siar jam sibuk. Digital: kirim lewat tokoh yang dipercaya (kader, bidan desa), bukan akun anonim.</p></details>
+<details><summary>7. Evaluasi dan perbaikan</summary><p>Ukur corong dampak: <b>terjangkau → paham → mau → bertindak</b>. Di Simulasi 3 kamu bisa mencari tahap yang paling bocor dan memutuskan perbaikannya.</p></details></div>
+<div class="card"><h3>Memilih media menurut kondisi lapangan</h3><div class="tbl"><table><tr><th>Media</th><th>Cocok untuk</th><th>Biaya</th><th>Keterbatasan</th></tr>
+<tr><td>Standing banner</td><td>Sasaran yang menunggu: loket, lobi, posyandu</td><td>Rendah</td><td>Hanya menjangkau yang datang; tidak cocok untuk yang tidak bisa membaca</td></tr>
+<tr><td>Radio spot</td><td>Desa tanpa sinyal, warga bekerja di ladang</td><td>Sedang</td><td>Tidak bisa diulang kembali; jam siar menentukan</td></tr>
+<tr><td>Video ILM / TV spot</td><td>Menggugah emosi, remaja dan keluarga muda</td><td>Tinggi (turun jika memakai alat sederhana)</td><td>Butuh layar, kuota, dan keahlian penyuntingan</td></tr>
+<tr><td>Grup WhatsApp</td><td>Ibu muda, remaja, kader</td><td>Rendah</td><td>Rawan hoaks; pesan tenggelam jika tidak singkat</td></tr>
+<tr><td>Kunjungan kader</td><td>Lansia, sasaran sulit, perubahan perilaku</td><td>Tinggi per orang</td><td>Butuh waktu dan pelatihan kader</td></tr></table></div></div>
+<div class="card"><h3>Etika, izin, dan akses untuk semua</h3><ul><li><b>Izin tertulis</b> untuk foto, wajah, atau suara warga. Jangan memajang pasien tanpa persetujuan.</li><li><b>Bahasa dan budaya lokal</b>: pakai istilah yang dipahami warga (misal Melayu Jambi), hindari istilah medis rumit dan label yang menyalahkan.</li><li><b>Aksesibilitas</b>: huruf besar dan kontras tinggi untuk lansia, teks tertulis pada video (subtitle) untuk tuli, narasi audio untuk yang sulit membaca.</li><li><b>Transparansi AI</b>: cantumkan "dibuat dengan bantuan AI" dan periksa kebenaran isi kesehatan secara manual.</li></ul></div>
+<div class="card"><h3>Daftar periksa sebelum cetak atau siar</h3><ul class="chk" id="fcl"></ul><div class="fb" id="fres">Centang semua butir untuk menyatakan media siap.</div></div>
+<div class="card"><h3>Template brief satu halaman</h3><div class="pr">Masalah        : (data + sumber)
+Sasaran primer : (siapa, usia, kebiasaan)
+Sasaran sekunder: (pemengaruh)
+Perilaku       : (siapa + melakukan apa + kapan/di mana)
+Pesan kunci    : (maks 1 kalimat)
+Saluran        : (2–3, alasan)
+Anggaran/jadwal: (rincian + tenggat)
+Ukuran sukses  : (terjangkau, paham, mau, bertindak: target %)</div><button class="btn" id="cpb">📋 Salin template</button></div>
+</section>
+
+<section id="sim">
+<div class="card hl"><span class="tag">Simulasi canggih</span><h3>Uji keputusan produksi sebelum uang dan waktu terpakai</h3><p>Tiga simulasi mengikuti pekerjaan nyata tim promkes: menguji keterbacaan banner dari jauh, merencanakan sebaran media dengan anggaran terbatas, lalu mengevaluasi hasil kampanye.</p>
+<div class="row" style="margin-top:6px"><button class="btn p" data-sm="sm1">👁️ 1. Uji keterbacaan</button><button class="btn" data-sm="sm2">🗺️ 2. Sebaran media</button><button class="btn" data-sm="sm3">📉 3. Evaluasi corong</button></div></div>
+
+<div id="sm1" class="card lab"><div><h3>Uji keterbacaan dari jarak jauh</h3><p class="note">Hitung kontras warna (standar WCAG), lalu lihat banner pada jarak baca, juga bagi pengguna buta warna atau pandangan gelap.</p>
+<label>Judul</label><input id="sa1" value="Ayo Imunisasi Lengkap">
+<label>Isi singkat</label><input id="sa8" value="Lindungi si kecil dari penyakit berbahaya.">
+<label>Ikon</label><select id="sa7"><option>💉</option><option>🧼</option><option>🦟</option><option>🍎</option></select>
+<label>Warna teks</label><input type="color" id="sa2" value="#0b4f4a"><label>Warna latar</label><input type="color" id="sa3" value="#d9f2ef">
+<label>Ukuran judul: <span id="sa4v">34</span> px (1 px = 0,2 cm)</label><input type="range" id="sa4" min="20" max="60" value="34">
+<label>Jarak pandang: <span id="sa5v">3</span> m</label><input type="range" id="sa5" min="1" max="10" step=".5" value="3">
+<label>Cara melihat</label><select id="sa6"><option value="n">Normal</option><option value="g">Hitam putih / pandangan redup</option><option value="d">Buta warna merah-hijau</option></select>
+<ul class="chk" id="sachk"></ul></div><canvas id="sac" class="cv" width="300" height="800" style="height:min(560px,70vh);width:auto"></canvas></div>
+
+<div id="sm2" class="card lab" hidden><div><h3>Rencana sebaran media</h3><p class="note">Tantangan: buat ≥70% ibu balita paham pesan dalam 8 minggu. Atur anggaran dan pembagian saluran.</p>
+<label>Total anggaran: Rp <span id="sb0v">5</span> juta</label><input type="range" id="sb0" min="1" max="20" value="5">
+<label>Banner &amp; poster posyandu: <span id="sb1v"></span></label><input type="range" id="sb1" min="0" max="100" value="20">
+<label>Radio komunitas: <span id="sb2v"></span></label><input type="range" id="sb2" min="0" max="100" value="25">
+<label>Grup WhatsApp desa: <span id="sb3v"></span></label><input type="range" id="sb3" min="0" max="100" value="30">
+<label>Kunjungan kader: <span id="sb4v"></span></label><input type="range" id="sb4" min="0" max="100" value="25">
+<div class="row"><button class="btn p" id="sbrun">▶ Jalankan 8 minggu</button><button class="btn" id="sbrst">↺ Ulang</button></div><div class="fb" id="sbout">Tekan Jalankan. Titik abu = belum terpapar, kuning = pernah terpapar, hijau = paham (≥2 paparan, termasuk dari mulut ke mulut). Cincin oranye = ibu balita.</div></div><canvas id="sbc" class="cv" width="640" height="440" style="width:100%"></canvas></div>
+
+<div id="sm3" class="card lab" hidden><div><h3>Corong evaluasi kampanye</h3><p class="note">Masukkan hasil survei singkat. Simulasi menunjuk tahap yang paling bocor.</p>
+<label>Jumlah sasaran (orang)</label><input type="number" id="sc1" value="200" min="1">
+<label>Terjangkau (%)</label><input type="number" id="sc2" value="70" min="0" max="100">
+<label>Paham pesan (% dari terjangkau)</label><input type="number" id="sc3" value="60" min="0" max="100">
+<label>Mau bertindak (% dari paham)</label><input type="number" id="sc4" value="65" min="0" max="100">
+<label>Benar-benar bertindak (% dari mau)</label><input type="number" id="sc5" value="60" min="0" max="100">
+<label>Total biaya (Rp)</label><input type="number" id="sc6" value="5000000" min="0">
+<label>Target bertindak (% sasaran)</label><input type="number" id="sc7" value="40" min="0" max="100">
+<div class="row"><button class="btn" id="sccp">⤵ Ambil dari Simulasi 2</button></div></div>
+<div><canvas id="scc" class="cv" width="640" height="300" style="width:100%"></canvas><div class="fb" id="scout"></div></div></div>
+</section>
+</main>
+
+<script>
+const $=s=>document.querySelector(s);
+const secs=[["materi","📚 Materi"],["kasus","🧩 Kasus"],["lab","🛠️ Praktikum"],["sim","🔬 Simulasi"],["lapangan","🧭 Lapangan"],["ai","🤖 Praktikum AI"],["kuis","✅ Kuis"],["dosen","👨‍🏫 Dosen Pengampu"]];
+const nav=$("#nav");
+secs.forEach(([id,t],i)=>{const b=document.createElement("button");b.textContent=t;b.onclick=()=>{secs.forEach(([x])=>$("#"+x).classList.toggle("on",x===id));[...nav.children].forEach(c=>c.classList.toggle("on",c===b));if(id==="lab")drawAll();if(id==="sim")simDraw();window.scrollTo(0,0)};if(!i)b.classList.add("on");nav.appendChild(b)});
+$("#materi").classList.add("on");
+
+/* KASUS */
+const cases=[
+["Puskesmas ingin mengingatkan ibu di ruang tunggu agar membawa balita imunisasi bulan depan. Media paling tepat?",["Standing banner di loket","Feature TV 5 menit","Radio spot 60 detik"],0,"Sasaran sudah berada di lokasi dan melihat sambil menunggu; pesan singkat cocok untuk banner."],
+["Desa terpencil tanpa sinyal internet, warga biasa mendengar radio komunitas saat bertani. Bagaimana menyebarkan pesan stop BAB sembarangan?",["Radio spot 30 detik","TV spot","Feature dokumenter"],0,"Radio menjangkau warga sambil beraktivitas dan tidak butuh internet atau layar."],
+["Dinas kesehatan ingin menggugah emosi publik lewat kisah nyata penyintas TBC yang berhasil sembuh.",["Standing banner","Feature audio visual","Radio spot 15 detik"],1,"Feature cocok untuk bercerita mendalam tentang tokoh dan perjuangan nyata."],
+["Pasar tradisional ramai dan pedagang sibuk melayani. Pesan: jaga kebersihan dan cuci tangan. Media paling tepat?",["Spot audio pendek lewat pengeras suara, diulang tiap jam","Feature 5 menit","Banner dengan teks panjang"],0,"Pedagang tidak sempat membaca atau menonton. Audio pendek yang berulang terdengar sambil bekerja."],
+["Remaja SMA aktif di media sosial. Tujuan: ajakan tidak merokok. Media paling tepat?",["Video ILM vertikal 15–30 detik","Radio AM pagi hari","Banner di kantor kelurahan"],0,"Remaja berada di media sosial; video pendek vertikal sesuai kebiasaan menonton mereka."],
+["Lansia dengan penglihatan menurun perlu belajar minum obat teratur. Pendekatan terbaik?",["Banner dengan huruf kecil","Penjelasan langsung oleh kader dengan alat peraga dan huruf besar","Video 5 menit di ponsel"],1,"Lansia terbantu tatap muka, suara, dan huruf besar. Media yang bergantung pada membaca kecil atau gawai kurang efektif."]];
+$("#cases").innerHTML=cases.map((c,i)=>`<div class="card"><b>Kasus ${i+1}.</b> ${c[0]}${c[1].map((o,j)=>`<button class="btn opt" data-c="${i}" data-j="${j}">${o}</button>`).join("")}<div id="cx${i}" style="margin-top:6px"></div></div>`).join("");
+$("#cases").onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;const i=+b.dataset.c,j=+b.dataset.j;const ok=j===cases[i][2];b.classList.add(ok?"right":"wrong");$("#cx"+i).innerHTML=(ok?"✅ Tepat. ":"❌ Belum tepat. ")+cases[i][3]};
+
+/* PRAKTIKUM AI */
+const P=(t,c)=>({t,c});
+const AIT={
+"Alur Kerja":`<div class="card"><h3>Alur kerja terpadu (contoh: ILM imunisasi balita)</h3><ol class="st">
+<li><b>Rumuskan pesan</b>: sasaran = ibu balita; perilaku = datang imunisasi; pesan kunci = "Imunisasi lengkap melindungi si kecil".</li>
+<li><b>Naskah</b> dengan Gemini/ChatGPT: minta 3 versi naskah radio 30 detik, pilih satu, edit sendiri agar sesuai konteks lokal.</li>
+<li><b>Visual</b> dengan Canva (Magic Media) atau Gemini: buat ilustrasi, lalu susun banner di Canva.</li>
+<li><b>Suara</b> dengan ElevenLabs: ubah naskah jadi narasi, tambah SFX.</li>
+<li><b>Musik/jingle</b> dengan pembuat lagu di Gemini.</li>
+<li><b>Video</b> dengan Google Flow: buat klip 8 detik per adegan sesuai storyboard.</li>
+<li><b>Gabung</b> di Canva Video atau CapCut: video + suara + musik + teks + logo.</li>
+<li><b>Uji coba</b> ke 5 orang sasaran, tanyakan: pesannya apa? maunya diajak apa? Revisi.</li></ol></div>`,
+"Canva":`<div class="card"><span class="tag">Desain</span><h3>Canva: standing banner step by step</h3><ol class="st">
+<li>Buka canva.com, klik <b>Buat desain → Ukuran khusus</b>, isi <b>60 × 160 cm</b>.</li>
+<li>Menu <b>Elemen → Frame/Bentuk</b>: buat blok warna latar. Pakai maksimal 2–3 warna dengan kontras tinggi.</li>
+<li>Buat visual: menu <b>Apps → Magic Media</b> (teks ke gambar), tempel prompt dari tab Contoh Prompt, pilih gaya ilustrasi, klik buat.</li>
+<li>Tambahkan <b>judul</b> (≤6 kata) dengan font tebal ukuran besar. Letakkan di sepertiga atas.</li>
+<li>Tambahkan <b>isi singkat</b> (≤25 kata), <b>ajakan bertindak</b>, kontak/logo di bagian bawah.</li>
+<li>Cek hierarki: mata harus bergerak judul → visual → isi → ajakan. Perkecil tampilan ke 20% untuk uji "3 detik".</li>
+<li><b>Bagikan → Unduh</b>: PDF Cetak untuk percetakan (aktifkan bleed jika diminta), PNG untuk media sosial.</li></ol>
+<details><summary>Fitur lain yang berguna</summary><ul><li><b>Magic Design</b>: deskripsikan kebutuhan, Canva membuat beberapa tata letak awal.</li><li><b>Brand Kit</b>: simpan logo, warna, font institusi agar konsisten.</li><li><b>Magic Edit/Eraser</b>: ubah atau hapus bagian gambar.</li><li><b>Canva Video</b>: rangkai klip, teks, dan audio.</li></ul></details></div>`,
+"ElevenLabs":`<div class="card"><span class="tag">Suara</span><h3>ElevenLabs: narasi radio spot step by step</h3><ol class="st">
+<li>Siapkan naskah final (±60–75 kata untuk 30 detik). Tulis angka dan singkatan sebagaimana dibaca, misal "dua puluh detik".</li>
+<li>Masuk elevenlabs.io, pilih <b>Text to Speech</b>, tempel naskah.</li>
+<li>Pilih <b>suara</b> dan bahasa <b>Indonesia</b>. Dengarkan beberapa suara; pilih yang hangat dan jelas.</li>
+<li>Atur <b>Stability</b> (rendah = ekspresif, tinggi = datar) dan <b>Speed</b> sampai durasi pas.</li>
+<li>Klik <b>Generate</b>, dengarkan. Perbaiki ejaan atau tanda baca (koma = jeda) lalu ulangi.</li>
+<li>Buat efek di <b>Sound Effects</b> (ketik deskripsi, misal "suara air keran mengalir 3 detik").</li>
+<li>Unduh audio, gabungkan dengan jingle dan SFX di Canva atau CapCut.</li></ol>
+<p><small>Catatan: ada batas kuota gratis. Jika ingin meniru suara orang tertentu, wajib izin tertulis orangnya.</small></p></div>`,
+"Google Flow":`<div class="card"><span class="tag">Video</span><h3>Google Flow: klip video untuk TV spot/ILM</h3><ol class="st">
+<li>Siapkan storyboard 4 panel (gunakan Lab 3). Satu panel = satu klip pendek.</li>
+<li>Buka Google Flow, buat <b>proyek baru</b> sesuai judul ILM.</li>
+<li>Pilih mode <b>teks ke video</b> (atau <b>gambar ke video</b> bila sudah punya ilustrasi tokoh).</li>
+<li>Tulis prompt per adegan: tokoh, aksi, lokasi, ukuran shot, gerak kamera, suasana. Satu adegan, satu aksi.</li>
+<li>Buat, tonton, pilih hasil terbaik. Jika tokoh berbeda antar klip, pakai gambar acuan yang sama.</li>
+<li>Susun klip pada timeline/scenebuilder atau unduh lalu rangkai di Canva Video.</li>
+<li>Tambahkan narasi ElevenLabs, musik, teks layar, dan logo.</li></ol>
+<p><small>Fitur, durasi, dan kuota tergantung akun dan versi terbaru. Verifikasi isi medis secara manual.</small></p></div>`,
+"Lagu (Gemini)":`<div class="card"><span class="tag">Musik</span><h3>Pembuat lagu di Gemini: jingle promkes</h3><ol class="st">
+<li>Buka aplikasi Gemini dan pilih fitur pembuatan musik (jika tersedia di akunmu).</li>
+<li>Tentukan <b>fungsi</b>: jingle 15–30 detik, atau lagu ILM 60 detik.</li>
+<li>Tulis <b>pesan kunci</b> sebagai lirik pendek (maksimal 2 baris yang mudah diingat).</li>
+<li>Sebut <b>genre, tempo, suasana, bahasa, instrumen</b> dalam prompt.</li>
+<li>Dengarkan 2–3 versi, pilih yang liriknya jelas dan mudah dinyanyikan anak/ibu.</li>
+<li>Unduh, potong intro agar singkat, pasang sebagai pembuka dan penutup spot.</li>
+<li>Cek: apakah lirik benar secara medis? apakah mirip lagu terkenal? Ganti jika ada kemiripan.</li></ol></div>`,
+"Tips & Trik":`<div class="card"><h3>Rumus prompt gambar</h3><div class="pr">[SUBJEK] + [AKSI] + [LOKASI/KONTEKS] + [GAYA] + [WARNA] + [KOMPOSISI] + [BATASAN]</div>
+<ul><li><b>Subjek spesifik</b>: "ibu Indonesia 30-an menggendong balita", bukan "orang".</li><li><b>Konteks lokal</b>: posyandu, puskesmas, rumah panggung, agar relevan dengan sasaran.</li><li><b>Gaya</b>: flat vector illustration, 3D kartun, foto realistis, cat air.</li><li><b>Komposisi</b>: "ruang kosong di atas untuk judul", "tampak depan", "close-up tangan".</li><li><b>Batasan</b>: "tanpa teks, tanpa logo, tanpa watermark".</li></ul></div>
+<div class="card"><h3>Tips & trik</h3><ul>
+<li><b>Mulai dari pesan</b>, bukan dari alat.</li>
+<li><b>Jangan minta AI menulis teks panjang di gambar</b>; ejaan sering salah. Buat gambar tanpa teks, tambah teks di Canva.</li>
+<li><b>Iterasi satu perubahan</b> tiap percobaan (warna saja, atau gaya saja) agar tahu penyebab hasil.</li>
+<li><b>Gunakan gambar acuan</b> agar tokoh konsisten antar media.</li>
+<li><b>Periksa detail</b>: jari, anatomi, alat medis, cara cuci tangan yang benar.</li>
+<li><b>Simpan prompt</b> yang berhasil sebagai template institusi.</li>
+<li><b>Etika</b>: jangan memakai wajah orang nyata tanpa izin, cantumkan "dibuat dengan bantuan AI", cek hak cipta lagu dan font.</li>
+<li><b>Verifikasi fakta kesehatan</b> dengan sumber resmi (Kemenkes, WHO). AI bisa keliru.</li>
+<li><b>Uji ke sasaran</b> sebelum disebarluaskan.</li></ul></div>
+<div class="card"><h3>Contoh prompt buruk vs baik</h3>
+<div class="pr bad">❌ Buatkan gambar cuci tangan yang bagus</div>
+<div class="pr good">✅ Flat vector illustration, anak SD Indonesia mencuci tangan dengan sabun di wastafel sekolah, tangan penuh busa tampak close-up, warna hijau-teal dan putih, latar bersih, ruang kosong di bagian atas untuk judul, tanpa teks dan watermark.</div></div>`,
+"Contoh Prompt":""};
+const EX=[
+["🪧 Gambar banner: imunisasi","Canva Magic Media / Gemini","Flat vector illustration, ibu Indonesia berhijab menggendong bayi sambil tersenyum di depan posyandu, perawat memegang kartu imunisasi, warna biru muda dan jingga hangat, komposisi vertikal dengan ruang kosong di atas untuk judul, gaya ramah dan bersih, tanpa teks, tanpa watermark."],
+["🦟 Poster DBD (media sosial)","Canva Magic Media","Ilustrasi kartun 3D, keluarga Indonesia membersihkan bak mandi dan menutup tempat penampungan air, nyamuk Aedes besar berwarna merah di sudut atas dengan tanda silang, warna hijau segar, komposisi persegi 1:1, ruang kosong di bawah untuk slogan 3M Plus."],
+["📝 Naskah radio spot","Gemini / ChatGPT","Bertindaklah sebagai penulis naskah promosi kesehatan. Buat naskah radio spot 30 detik untuk ajakan imunisasi balita di desa, sasaran ibu rumah tangga, bahasa Indonesia sehari-hari, maksimal 65 kata, kalimat pendek, ulangi pesan kunci 2 kali, akhiri dengan ajakan datang ke posyandu. Format: kolom SUARA, SFX, MUSIK, TEKS. Beri 3 versi."],
+["🎙️ Pengaturan narasi","ElevenLabs","Suara perempuan dewasa, hangat dan meyakinkan, bahasa Indonesia. Stability sedang (sekitar 40–50%), speed normal. Beri koma pada jeda penting. Target durasi 28 detik."],
+["🔊 Efek suara","ElevenLabs Sound Effects","Suara air keran mengalir dan tangan menggosok sabun di wastafel, 4 detik, bersih tanpa musik latar."],
+["🎬 Adegan video ILM","Google Flow","Wide shot, pagi hari di halaman posyandu desa Indonesia, ibu-ibu mengantre dengan balita, kader memakai rompi, cahaya hangat alami, kamera bergerak pelan maju (slow dolly in), suasana ceria, 8 detik, tanpa teks di layar."],
+["🎬 Close-up emosi","Google Flow","Close-up, bayi tersenyum setelah imunisasi digendong ibunya, kulit sawo matang, cahaya lembut jendela, fokus dangkal, kamera diam, 6 detik."],
+["🎵 Jingle promkes","Pembuat lagu Gemini","Buat jingle 20 detik berbahasa Indonesia, genre pop ceria, tempo sedang cepat, ukulele dan tepuk tangan, suara vokal anak-anak dan ibu. Lirik: 'Cuci tangan, pakai sabun, sehat badan, ayo lakukan!' Mudah diingat dan diulang dua kali."],
+["📋 Storyboard 4 panel","Gemini / ChatGPT","Buat storyboard ILM 30 detik tentang stop merokok di rumah, sasaran bapak muda. Tabel 4 panel: ukuran shot, adegan, dialog/narasi, durasi, catatan suara. Panel terakhir berisi ajakan bertindak dan nomor layanan berhenti merokok."],
+["🎨 Magic Design","Canva","Standing banner kesehatan ibu hamil, gaya modern minimalis, warna merah muda dan krem, judul besar 'Periksa Kehamilan Rutin', empat poin singkat, ajakan 'Datang ke puskesmas terdekat', tempat logo di bawah."]];
+let aiTab="Alur Kerja";
+function cp(i){try{navigator.clipboard.writeText(EX[i][2])}catch(e){}const b=$("#cp"+i);b.textContent="✔ Tersalin";setTimeout(()=>b.textContent="📋 Salin",1500)}
+function aiRender(){
+$("#aitabs").innerHTML=Object.keys(AIT).map(k=>`<button class="btn ${k===aiTab?"p":""}" data-t="${k}">${k}</button>`).join("");
+$("#aibody").innerHTML=aiTab==="Contoh Prompt"?`<div class="card"><p style="margin:0">Ganti bagian yang relevan (sasaran, lokasi, pesan) sesuai konteks kasusmu.</p></div>`+EX.map((e,i)=>`<div class="card"><h3>${e[0]}</h3><small style="color:var(--mu)">Alat: ${e[1]}</small><div class="pr">${e[2]}</div><button class="btn" id="cp${i}" onclick="cp(${i})">📋 Salin</button></div>`).join(""):AIT[aiTab]}
+$("#aitabs").onclick=e=>{const b=e.target.closest("[data-t]");if(b){aiTab=b.dataset.t;aiRender()}};
+aiRender();
+
+/* KUIS */
+const qs=[
+["Berapa batas ideal kata pada judul standing banner?",["≤ 6 kata","Sekitar 20 kata","Tidak perlu judul"],0,"Banner dibaca 3–5 detik sambil lewat, sehingga judul harus singkat (≤6 kata) agar pesan utama tertangkap."],
+["Naskah radio spot 30 detik sebaiknya berisi sekitar…",["15 kata","60–70 kata","150 kata"],1,"Kecepatan baca sekitar 2,5 kata/detik. 30 detik ≈ 75 kata, dikurangi waktu jingle dan SFX menjadi sekitar 60–70 kata."],
+["Ukuran shot yang paling tepat untuk menonjolkan emosi atau detail penting adalah…",["Wide","Close-up","Medium"],1,"Close-up memperlihatkan ekspresi wajah atau detail seperti tangan berbusa sabun. Wide untuk konteks lokasi."],
+["Menyusun storyboard termasuk tahap…",["Produksi","Pasca-produksi","Pra-produksi"],2,"Storyboard dibuat sebelum pengambilan gambar, yaitu pra-produksi bersama ide, riset, naskah, dan jadwal."],
+["Format audio visual yang bercerita mendalam tentang tokoh/kisah nyata selama 2–5 menit adalah…",["TV spot","Feature","Radio spot"],1,"Feature berdurasi lebih panjang dan bercerita mendalam. TV spot 15–60 detik dan padat."],
+["Ukuran umum dan orientasi standing banner adalah…",["60×160 cm tegak","160×60 cm mendatar","A4 mendatar"],0,"Standing banner umumnya 60×160 cm berorientasi tegak agar mudah berdiri di loket atau lobi."],
+["Rumus prompt gambar yang baik paling tepat adalah…",["Satu kata kunci","Subjek + aksi + konteks + gaya + warna + komposisi","Salin prompt orang lain tanpa mengubah"],1,"Prompt lengkap membuat AI memahami siapa, sedang apa, di mana, bergaya apa, dan tata letaknya."],
+["Mengapa teks banner sebaiknya ditambahkan di Canva, bukan lewat gambar AI?",["Canva lebih murah","AI sering salah mengeja dan mengacak huruf","AI tidak bisa membuat gambar"],1,"Generator gambar sering menghasilkan huruf salah atau tidak terbaca. Buat gambar tanpa teks, lalu tambahkan teks di Canva."],
+["Prompt mana yang paling baik untuk gambar promkes?",["Gambar cuci tangan yang bagus","Anak SD Indonesia cuci tangan pakai sabun di wastafel sekolah, flat vector, hijau-teal, ruang kosong di atas untuk judul","Orang, tangan, air"],1,"Prompt ke-2 memuat subjek, aksi, lokasi, gaya, warna, dan komposisi. Lainnya terlalu umum."],
+["Tujuan menulis 'ruang kosong di atas untuk judul' dalam prompt adalah…",["Menghemat kuota","Menyediakan negative space untuk teks","Mengecilkan ukuran file"],1,"Ruang kosong (negative space) memudahkan menaruh judul tanpa menutupi visual penting."],
+["Fitur utama ElevenLabs dalam praktikum ini adalah…",["Mengedit foto","Mengubah naskah menjadi suara narasi dan membuat efek suara","Mencetak banner"],1,"ElevenLabs dipakai untuk Text to Speech dan Sound Effects pada radio spot atau narasi video."],
+["Google Flow dipakai untuk…",["Membuat klip video dari prompt atau gambar","Menghitung anggaran","Mengetik naskah di Word"],0,"Flow menghasilkan klip video pendek dari teks atau gambar acuan, cocok untuk adegan TV spot atau ILM."],
+["Agar jingle dari pembuat lagu AI sesuai kebutuhan, prompt harus menyebut…",["Hanya judul","Genre, tempo, suasana, bahasa, durasi, dan lirik pesan kunci","Nama penyanyi terkenal"],1,"Detail musikal dan lirik pesan kunci mengarahkan hasil. Meniru penyanyi tertentu berisiko melanggar hak cipta."],
+["Saat menulis naskah untuk Text to Speech, sebaiknya…",["Menulis angka dan singkatan sebagaimana dibaca, memakai koma untuk jeda","Memakai kalimat sangat panjang","Memakai banyak istilah medis"],0,"Tulisan yang dibaca persis (misal 'dua puluh detik') mencegah salah ucap, dan tanda baca mengatur jeda."],
+["Langkah etis saat memakai AI generatif untuk media publik adalah…",["Memakai wajah orang nyata tanpa izin","Mencantumkan bahwa karya dibuat dengan bantuan AI dan memeriksa fakta","Menyembunyikan penggunaan AI"],1,"Transparansi, izin pemilik wajah/suara, serta verifikasi fakta kesehatan menjaga kepercayaan publik."],
+["Langkah pertama memproduksi media promkes adalah…",["Membuka aplikasi desain","Menganalisis sasaran dan merumuskan satu pesan kunci","Memilih musik"],1,"Alat hanyalah sarana. Tanpa sasaran dan pesan kunci yang jelas, media sulit mengubah perilaku."],
+["Saat hasil gambar AI kurang sesuai, cara iterasi yang baik adalah…",["Mengganti seluruh prompt tiap kali","Mengubah satu elemen prompt per percobaan","Menyerah"],1,"Mengubah satu elemen membuat kita tahu bagian prompt mana yang berpengaruh."],
+["Banner dengan teks kuning pucat di atas latar krem bermasalah karena…",["Kontras rendah sehingga sulit dibaca","Warnanya terlalu gelap","Fontnya terlalu besar"],0,"Kontras rendah membuat teks tidak terbaca dari jarak 2–3 meter. Pakai warna teks dan latar yang berbeda tegas."],
+["Uji coba media ke sekitar 5 orang sasaran bertujuan untuk…",["Memastikan pesan dipahami dan mencari bagian yang perlu direvisi","Menambah jumlah cetakan","Memilih font yang paling tipis"],0,"Uji coba (pretest) memastikan pesan, gambar, dan ajakan dipahami sasaran sebelum dicetak atau disebar."],
+["Urutan alur kerja terpadu yang paling tepat adalah…",["Video → naskah → pesan → musik","Pesan & naskah → visual → suara/musik → video/gabung → uji coba","Musik → uji coba → pesan → naskah"],1,"Pesan dan naskah menjadi dasar semua media, lalu visual, audio, penggabungan, dan terakhir uji coba."]];
+let sc=0,ans=0;
+const L="ABCDEFG";
+function qrender(){sc=0;ans=0;$("#qres").hidden=true;$("#qp").textContent="Terjawab 0 / "+qs.length+" · Skor 0";
+$("#qz").innerHTML=qs.map((q,i)=>`<div class="card" id="qq${i}"><p style="margin:0 0 6px"><b>${i+1}. ${q[0]}</b></p>${q[1].map((o,j)=>`<button class="btn opt" data-q="${i}" data-j="${j}">${L[j]}. ${o}</button>`).join("")}<div class="fb" id="fb${i}" hidden></div></div>`).join("")}
+$("#qz").onclick=e=>{const b=e.target.closest("[data-q]");if(!b)return;const i=+b.dataset.q;const box=$("#qq"+i);if(box.dataset.d)return;box.dataset.d=1;const j=+b.dataset.j,k=qs[i][2],ok=j===k;
+b.classList.add(ok?"right":"wrong");const all=[...box.querySelectorAll(".opt")];if(!ok)all[k].classList.add("right");
+const f=$("#fb"+i);f.hidden=false;f.innerHTML=ok?`✅ <b>Benar.</b> ${qs[i][3]}`:`❌ <b>Belum tepat.</b> Jawaban yang benar: <b>${L[k]}. ${qs[i][1][k]}</b><br>${qs[i][3]}`;
+if(ok)sc++;ans++;$("#qp").textContent="Terjawab "+ans+" / "+qs.length+" · Skor "+sc*5;
+if(ans===qs.length){const r=$("#qres");r.hidden=false;const n=sc*5;r.innerHTML=`<p class="score">Skor akhir: ${n}/100</p><p>${n>=80?"Luar biasa! Kamu siap membuat media promkes dengan AI.":n>=60?"Cukup baik. Pelajari lagi penjelasan soal yang salah.":"Ulangi materi dan praktikum, lalu coba lagi."}</p><button class="btn p" id="qrs">🔁 Ulangi kuis</button>`;$("#qrs").onclick=()=>{qrender();window.scrollTo(0,0)};r.scrollIntoView({behavior:"smooth"})}};
+qrender();
+
+/* util */
+function wrap(c,t,x,y,w,lh){const ws=t.split(/\s+/);let l="",n=0;for(const s of ws){const tt=l?l+" "+s:s;if(c.measureText(tt).width>w&&l){c.fillText(l,x,y+n*lh);l=s;n++}else l=tt}c.fillText(l,x,y+n*lh);return n+1}
+const cnt=t=>t.trim()?t.trim().split(/\s+/).length:0;
+function chk(el,items){el.innerHTML=items.map(([ok,t])=>`<li class="${ok?"ok":"no"}">${ok?"✔":"✖"} ${t}</li>`).join("")}
+document.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>{document.querySelectorAll("[data-l]").forEach(x=>x.classList.toggle("p",x===b));["l1","l2","l3"].forEach(id=>$("#"+id).hidden=id!==b.dataset.l);drawAll()});
+
+/* LAB 1 */
+const themes=[["#0f9d8a","#e6fffa","#ffffff"],["#1d4ed8","#e0ecff","#ffffff"],["#e8590c","#fff1e6","#ffffff"],["#fde68a","#fffbe6","#fef3c7"]];
+function banner(){const c=$("#cb").getContext("2d"),th=themes[+$("#b4").value],W=300,H=800;
+const g=c.createLinearGradient(0,0,0,H);g.addColorStop(0,th[0]);g.addColorStop(1,th[1]);c.fillStyle=g;c.fillRect(0,0,W,H);
+c.fillStyle="rgba(255,255,255,.18)";c.beginPath();c.arc(260,120,110,0,7);c.fill();c.beginPath();c.arc(30,520,90,0,7);c.fill();
+c.textAlign="center";c.font="120px serif";c.fillStyle="#000";c.fillText($("#b5").value,W/2,190);
+const fs=+$("#b6").value;c.font=`800 ${fs}px system-ui,sans-serif`;c.fillStyle=th[2];c.textAlign="left";
+c.shadowColor="rgba(0,0,0,.35)";c.shadowBlur=4;const n=wrap(c,$("#b1").value,24,270,W-48,fs*1.15);c.shadowBlur=0;
+const y=270+n*fs*1.15+10;c.fillStyle="rgba(255,255,255,.92)";c.fillRect(16,y,W-32,230);c.fillStyle="#1f2937";c.font="20px system-ui,sans-serif";wrap(c,$("#b2").value,28,y+36,W-56,28);
+c.fillStyle="#111827";c.fillRect(0,H-120,W,120);c.fillStyle="#fff";c.font="700 20px system-ui,sans-serif";c.textAlign="center";wrap(c,"👉 "+$("#b3").value,W/2,H-80,W-40,26);
+c.font="12px system-ui";c.fillStyle="#9ca3af";c.fillText("Poltekkes Kemenkes Jambi · Promkes",W/2,H-14);
+chk($("#bchk"),[[cnt($("#b1").value)<=6&&cnt($("#b1").value)>0,"Judul ≤ 6 kata"],[cnt($("#b2").value)<=25,"Isi ≤ 25 kata ("+cnt($("#b2").value)+")"],[cnt($("#b3").value)>0,"Ada ajakan/kontak"],[$("#b4").value!=="3","Kontras warna memadai"],[fs>=30,"Judul cukup besar"]]);$("#b6v").textContent=fs}
+document.querySelectorAll("#l1 input,#l1 select,#l1 textarea").forEach(e=>e.oninput=banner);
+$("#bdl").onclick=()=>{const a=document.createElement("a");a.download="standing-banner.png";a.href=$("#cb").toDataURL();a.click()};
+
+/* LAB 2 */
+let rt=null,ph=-1;
+function radio(){const c=$("#cr").getContext("2d"),T=+$("#r0").value,W=640,H=320,t=$("#r1").value,w=cnt(t),dur=w/2.5,jin=3,pad=40,sc=(W-2*pad)/T;
+c.fillStyle="#fff";c.fillRect(0,0,W,H);c.font="14px system-ui";c.fillStyle="#374151";c.textAlign="center";c.fillText("Garis waktu spot "+T+" detik",W/2,24);
+c.strokeStyle="#d1d5db";c.textAlign="left";for(let s=0;s<=T;s+=T/6){const x=pad+s*sc;c.beginPath();c.moveTo(x,50);c.lineTo(x,250);c.stroke();c.fillStyle="#6b7280";c.fillText(Math.round(s)+"s",x-6,270)}
+const row=(y,x0,len,col,lab)=>{c.fillStyle=col;c.fillRect(pad+x0*sc,y,Math.min(len,T-x0)*sc,36);c.fillStyle="#fff";c.fillText(lab,pad+x0*sc+6,y+23)};
+row(60,0,jin,"#8b5cf6","Jingle");row(110,jin,dur,dur+jin>T?"#dc2626":"#0f9d8a","Narator "+dur.toFixed(1)+"s");row(160,T-jin,jin,"#8b5cf6","Jingle");row(210,jin+dur*.5,1.5,"#f59e0b","SFX");
+if(ph>=0){c.strokeStyle="#e8590c";c.lineWidth=3;c.beginPath();c.moveTo(pad+ph*sc,45);c.lineTo(pad+ph*sc,255);c.stroke();c.lineWidth=1}
+c.fillStyle="#111";c.fillText(w+" kata ≈ "+dur.toFixed(1)+" detik baca",pad,300);
+const low=t.toLowerCase();chk($("#rchk"),[[dur+2*jin<=T,"Muat dalam durasi (+jingle)"],[dur>=T*.5,"Naskah cukup padat (≥ 50% durasi)"],[/segera|ayo|ingat|datang|bawa|mulai/.test(low),"Ada ajakan bertindak"],[(t.match(/puskesmas|segera/gi)||[]).length>=2,"Pesan kunci diulang ≥ 2 kali"],[t.split(/[.!?]/).every(s=>cnt(s)<=14),"Kalimat pendek (≤ 14 kata)"]])}
+document.querySelectorAll("#l2 textarea,#l2 select").forEach(e=>e.oninput=radio);
+$("#rplay").onclick=()=>{clearInterval(rt);speechSynthesis.cancel();ph=0;const T=+$("#r0").value;try{const u=new SpeechSynthesisUtterance($("#r1").value);u.lang="id-ID";speechSynthesis.speak(u)}catch(e){}
+rt=setInterval(()=>{ph+=.1;if(ph>T){clearInterval(rt);ph=-1}radio()},100)};
+$("#rstop").onclick=()=>{clearInterval(rt);try{speechSynthesis.cancel()}catch(e){}ph=-1;radio()};
+
+/* LAB 3 */
+const shots=["Wide","Medium","Close-up"],scenes=["Puskesmas","Rumah","Posyandu"];
+const defs=[[0,0,"Ibu cemas, anak belum imunisasi"],[1,2,"Kader menjelaskan manfaat vaksin"],[2,2,"Anak tersenyum setelah imunisasi"],[1,0,"Ayo ke posyandu bulan ini!"]];
+$("#sctl").innerHTML=defs.map((d,i)=>`<div style="border-top:1px solid var(--bd);margin-top:6px"><label>Panel ${i+1}</label><div class="row" style="margin:0"><select data-s="${i}" data-k="0" style="flex:1">${shots.map((s,j)=>`<option value="${j}" ${j==d[0]?"selected":""}>${s}</option>`).join("")}</select><select data-s="${i}" data-k="1" style="flex:1">${scenes.map((s,j)=>`<option value="${j}" ${j==d[1]?"selected":""}>${s}</option>`).join("")}</select></div><input data-s="${i}" data-k="2" value="${d[2]}"></div>`).join("");
+let hi=-1,st=null;
+function story(){const c=$("#cs").getContext("2d");c.fillStyle="#fff";c.fillRect(0,0,640,440);const pan=[...document.querySelectorAll("#sctl [data-s]")];const P=[];for(let i=0;i<4;i++)P.push([+pan[i*3].value,+pan[i*3+1].value,pan[i*3+2].value]);
+const bgs=["#dbeafe","#fef3c7","#dcfce7"];
+P.forEach((p,i)=>{const x=10+(i%2)*315,y=10+Math.floor(i/2)*215,w=305,h=170;c.fillStyle=bgs[p[1]];c.fillRect(x,y,w,h);c.fillStyle="rgba(0,0,0,.12)";c.fillRect(x,y+h-35,w,35);
+c.font="12px system-ui";c.fillStyle="#374151";c.textAlign="left";c.fillText(scenes[p[1]],x+6,y+16);c.fillText(["🏥","🏠","🌳"][p[1]],x+w-26,y+18);
+const s=[.55,1,1.9][p[0]],cx=x+w/2,cy=y+h-20-(p[0]==2?-60:0);c.fillStyle="#f59e0b";c.beginPath();c.arc(cx,cy-60*s+(p[0]==2?30:0),18*s,0,7);c.fill();c.fillStyle="#0f9d8a";c.fillRect(cx-16*s,cy-42*s+(p[0]==2?30:0),32*s,45*s);c.fillStyle="#111";c.font=`${12*s}px serif`;c.fillText(i==2?"😊":i==0?"😟":"🙂",cx-8*s,cy-54*s+(p[0]==2?30:0));
+if(i===hi){c.strokeStyle="#e8590c";c.lineWidth=5;c.strokeRect(x,y,w,h);c.lineWidth=1}
+c.fillStyle="#111";c.font="13px system-ui";wrap(c,(i+1)+". ["+shots[p[0]]+"] "+p[2],x,y+h+18,w,15)});
+chk($("#schk"),[[P.some(p=>p[0]==0),"Ada wide shot pembuka (konteks)"],[P.some(p=>p[0]==2),"Ada close-up (emosi/detail)"],[new Set(P.map(p=>p[0])).size>=2,"Variasi ukuran shot"],[/ayo|segera|datang|bawa/i.test(P[3][2]),"Panel akhir berisi ajakan (CTA)"],[P.every(p=>cnt(p[2])<=10),"Teks tiap panel ringkas"]])}
+$("#sctl").oninput=story;
+$("#splay").onclick=()=>{clearInterval(st);hi=0;story();st=setInterval(()=>{hi++;if(hi>3){clearInterval(st);hi=-1}story()},1200)};
+$("#sdl").onclick=()=>{const a=document.createElement("a");a.download="storyboard.png";a.href=$("#cs").toDataURL();a.click()};
+function drawAll(){banner();radio();story()}
+drawAll();
+
+/* ===== LAPANGAN ===== */
+const FCL=["Satu pesan kunci, ada ajakan bertindak","Fakta dicek ke sumber resmi dan diparaf tenaga kesehatan","Sudah diuji ke ≥5 orang sasaran","Huruf dan kontras terbaca dari jarak target","Izin foto/suara warga sudah tertulis","Ada nomor atau lokasi layanan yang benar","Bahasa sesuai budaya lokal, tidak menyalahkan","Anggaran, tempat pasang/jadwal siar sudah pasti"];
+$("#fcl").innerHTML=FCL.map((t,i)=>`<li><label style="display:flex;gap:8px;align-items:flex-start;margin:4px 0;color:var(--tx);font-size:15px"><input type="checkbox" data-f style="width:20px;height:20px;margin-top:3px">${t}</label></li>`).join("");
+$("#fcl").onchange=()=>{const a=[...document.querySelectorAll("[data-f]")],n=a.filter(x=>x.checked).length;$("#fres").textContent=n===a.length?"✅ Siap cetak atau siar.":"Terpenuhi "+n+" dari "+a.length+" butir."};
+$("#cpb").onclick=()=>{try{navigator.clipboard.writeText($("#cpb").previousElementSibling.textContent)}catch(e){}$("#cpb").textContent="✔ Tersalin";setTimeout(()=>$("#cpb").textContent="📋 Salin template",1500)};
+$("#thm").onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=d?"light":"dark"};
+
+/* ===== SIMULASI ===== */
+const hx=h=>[1,3,5].map(i=>parseInt(h.substr(i,2),16));
+const lum=h=>{const[r,g,b]=hx(h).map(v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});return .2126*r+.7152*g+.0722*b};
+const crt=(a,b)=>{const x=lum(a),y=lum(b);return(Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+const off=document.createElement("canvas");off.width=300;off.height=800;
+function simA(){const tc=$("#sa2").value,bg=$("#sa3").value,fs=+$("#sa4").value,d=+$("#sa5").value,md=$("#sa6").value,tt=$("#sa1").value;
+$("#sa4v").textContent=fs;$("#sa5v").textContent=d;
+const o=off.getContext("2d");o.fillStyle=bg;o.fillRect(0,0,300,800);o.globalAlpha=.12;o.fillStyle=tc;o.beginPath();o.arc(230,140,100,0,7);o.fill();o.globalAlpha=1;
+o.textAlign="center";o.font="110px serif";o.fillStyle="#000";o.fillText($("#sa7").value,150,180);
+o.textAlign="left";o.fillStyle=tc;o.font=`800 ${fs}px system-ui,sans-serif`;const n=wrap(o,tt,20,260,260,fs*1.15);
+o.font="600 18px system-ui,sans-serif";wrap(o,$("#sa8").value,20,260+n*fs*1.15+24,260,26);
+o.fillStyle=tc;o.fillRect(0,720,300,80);o.fillStyle=bg;o.textAlign="center";o.font="700 18px system-ui,sans-serif";o.fillText("Datang ke posyandu terdekat",150,766);
+const maxD=fs/5*.7*1.2,r=d/maxD,k=r<=.6?1:1+(r-.6)*7,c=$("#sac").getContext("2d");
+const sm=document.createElement("canvas");sm.width=Math.max(8,300/k);sm.height=Math.max(20,800/k);sm.getContext("2d").drawImage(off,0,0,sm.width,sm.height);
+c.imageSmoothingEnabled=true;c.drawImage(sm,0,0,300,800);
+if(md!=="n"){const im=c.getImageData(0,0,300,800),p=im.data;for(let i=0;i<p.length;i+=4){const R=p[i],G=p[i+1],B=p[i+2];if(md==="g"){const y=R*.3+G*.59+B*.11;p[i]=p[i+1]=p[i+2]=y*.85}else{p[i]=.625*R+.375*G;p[i+1]=.7*R+.3*G;p[i+2]=.3*G+.7*B}}c.putImageData(im,0,0)}
+const cc=crt(tc,bg);
+chk($("#sachk"),[[cc>=4.5,"Kontras "+cc.toFixed(1)+":1 (minimal 4,5:1)"],[maxD>=d,"Judul terbaca sampai ± "+maxD.toFixed(1)+" m (jarak uji "+d+" m)"],[cnt(tt)>0&&cnt(tt)<=6,"Judul ≤ 6 kata ("+cnt(tt)+")"],[md==="n"||cc>=4.5,"Aman untuk pandangan redup/buta warna"]])}
+document.querySelectorAll("#sm1 input,#sm1 select").forEach(e=>e.oninput=simA);
+
+const SEG=[["Ibu balita","#e8590c",.35],["Remaja","#7c3aed",.25],["Bapak","#2563eb",.25],["Lansia","#0d9488",.15]];
+const AFF=[[.7,.4,.7,.9],[.2,.1,.9,.4],[.3,.6,.4,.5],[.4,.7,.1,.9]],COSTK=[600000,900000,500000,1500000];
+const CHN=["Banner","Radio","WA","Kader"];
+function rng(s){return()=>{s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+let ag=[],wk=0,tmB=null,bm=null;
+function bInit(){clearInterval(tmB);const R=rng(11),H=[[110,100],[290,70],[480,110],[200,215],[420,230]];ag=[];
+for(let i=0;i<260;i++){const h=H[i%5],a=R()*6.28,r=Math.sqrt(R())*58,u=R();let s=0,c=SEG[0][2];while(u>c&&s<3){s++;c+=SEG[s][2]}ag.push({x:h[0]+Math.cos(a)*r,y:h[1]+Math.sin(a)*r*.8,s,e:0})}wk=0;bDraw()}
+function shares(){const v=[1,2,3,4].map(i=>+$("#sb"+i).value),t=v.reduce((a,b)=>a+b,0)||1;return v.map(x=>x/t)}
+function bStep(){const R=rng(100+wk),B=+$("#sb0").value*1e6,sh=shares(),sp=sh.map(x=>x*B),add=ag.map(()=>0);
+ag.forEach((a,i)=>{for(let c=0;c<4;c++)if(R()<AFF[a.s][c]*(1-Math.exp(-sp[c]/COSTK[c]))*.35)add[i]++;
+if(a.e>0)ag.forEach((b,j)=>{if(i!==j&&Math.abs(a.x-b.x)<28&&Math.abs(a.y-b.y)<28&&R()<.03)add[j]++})});
+ag.forEach((a,i)=>a.e+=add[i]);wk++}
+function bDraw(){const c=$("#sbc").getContext("2d");c.fillStyle="#f1f5f9";c.fillRect(0,0,640,440);c.fillStyle="#e2e8f0";c.fillRect(0,0,640,300);
+c.font="12px system-ui";c.fillStyle="#64748b";c.textAlign="left";[["Dusun A",70,28],["Dusun B",250,18],["Dusun C",440,28],["Dusun D",160,285],["Dusun E",380,296]].forEach(d=>c.fillText(d[0],d[1],d[2]));
+ag.forEach(a=>{c.beginPath();c.arc(a.x,a.y,4,0,7);c.fillStyle=a.e>=2?"#16a34a":a.e===1?"#f59e0b":"#94a3b8";c.fill();if(a.s===0){c.strokeStyle="#e8590c";c.lineWidth=1.5;c.beginPath();c.arc(a.x,a.y,6,0,7);c.stroke()}});
+const n=ag.length,N=s=>ag.filter(a=>s<0||a.s===s),jr=a=>a.filter(x=>x.e>0).length,ph=a=>a.filter(x=>x.e>=2).length;
+c.fillStyle="#0f172a";c.font="700 14px system-ui";c.fillText("Minggu "+wk+" / 8",12,318);
+SEG.forEach((s,i)=>{const g=N(i),y=332+i*26,j=jr(g)/g.length,p=ph(g)/g.length;c.font="12px system-ui";c.fillStyle="#334155";c.fillText(s[0],12,y+12);c.fillStyle="#cbd5e1";c.fillRect(110,y,400,16);c.fillStyle="#f59e0b";c.fillRect(110,y,400*j,16);c.fillStyle="#16a34a";c.fillRect(110,y,400*p,16);c.fillStyle="#0f172a";c.fillText(Math.round(p*100)+"% paham",518,y+12)});
+bm={n,jang:Math.round(jr(ag)/n*100),paham:Math.round(ph(ag)/n*100),ibu:Math.round(ph(N(0))/N(0).length*100),biaya:ph(ag)?Math.round(+$("#sb0").value*1e6/ph(ag)):0};
+const sh=shares();[1,2,3,4].forEach(i=>$("#sb"+i+"v").textContent=Math.round(sh[i-1]*100)+"% ("+CHN[i-1]+")");$("#sb0v").textContent=$("#sb0").value;
+if(wk>0)$("#sbout").innerHTML=`Terjangkau <b>${bm.jang}%</b> · paham <b>${bm.paham}%</b> · ibu balita paham <b>${bm.ibu}%</b> · biaya per orang paham <b>Rp${bm.biaya.toLocaleString("id-ID")}</b>.`+(wk>=8?(bm.ibu>=70?" ✅ Target tercapai!":" ❌ Belum 70%. Coba geser anggaran ke saluran yang disukai ibu (WhatsApp dan kader)."):"")}
+$("#sbrun").onclick=()=>{bInit();tmB=setInterval(()=>{if(wk>=8){clearInterval(tmB);return}bStep();bDraw()},550)};
+$("#sbrst").onclick=bInit;
+document.querySelectorAll("#sm2 input[type=range]").forEach(e=>e.oninput=bInit);
+
+function simC(){const g=i=>Math.max(0,+$("#sc"+i).value||0),N=g(1),B=g(6),tg=g(7),r=[g(2),g(3),g(4),g(5)];
+const v=[N];r.forEach(p=>v.push(v[v.length-1]*Math.min(p,100)/100));
+const nm=["Sasaran","Terjangkau","Paham","Mau","Bertindak"],c=$("#scc").getContext("2d");c.fillStyle="#fff";c.fillRect(0,0,640,300);
+const low=r.indexOf(Math.min(...r));
+v.forEach((x,i)=>{const w=Math.max(4,(x/(N||1))*430),y=10+i*56,xx=105+(430-w)/2;c.fillStyle=i-1===low?"#dc2626":["#94a3b8","#f59e0b","#0ea5e9","#8b5cf6","#16a34a"][i];c.fillRect(xx,y,w,44);c.fillStyle="#0f172a";c.font="13px system-ui";c.textAlign="left";c.fillText(nm[i],8,y+27);c.textAlign="center";c.fillStyle="#fff";c.font="700 14px system-ui";c.fillText(Math.round(x),xx+w/2,y+27);if(i){c.fillStyle="#334155";c.textAlign="left";c.font="12px system-ui";c.fillText(r[i-1]+"%",548,y+27)}});
+const act=v[4],cov=N?act/N*100:0,fix=["Perluas saluran dan tambah frekuensi pesan.","Sederhanakan pesan, ganti istilah sulit, dan uji ulang ke 5 sasaran.","Tambahkan motivasi: testimoni, tokoh dipercaya, dan peran kader.","Permudah tindakan: jadwal, jarak, biaya, dan pengingat."][low];
+$("#scout").innerHTML=`Cakupan tindakan <b>${cov.toFixed(0)}%</b> dari target <b>${tg}%</b> ${cov>=tg?"✅":"❌"}.<br>Biaya per orang bertindak: <b>Rp${act?Math.round(B/act).toLocaleString("id-ID"):"-"}</b>.<br>Tahap paling bocor: <b>${nm[low+1]}</b> (${r[low]}%). ${fix}`}
+document.querySelectorAll("#sm3 input").forEach(e=>e.oninput=simC);
+$("#sccp").onclick=()=>{if(!bm){$("#scout").textContent="Jalankan Simulasi 2 dulu.";return}$("#sc1").value=bm.n;$("#sc2").value=bm.jang;$("#sc3").value=bm.jang?Math.round(bm.paham/bm.jang*100):0;$("#sc6").value=+$("#sb0").value*1e6;simC()};
+function simDraw(){simA();if(!bm)bInit();simC()}
+document.querySelectorAll("[data-sm]").forEach(b=>b.onclick=()=>{document.querySelectorAll("[data-sm]").forEach(x=>x.classList.toggle("p",x===b));["sm1","sm2","sm3"].forEach(id=>$("#"+id).hidden=id!==b.dataset.sm);simDraw()});
+</script>
+</body>
+</html>
